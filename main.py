@@ -33,9 +33,3 @@ async def home(request: Request):
 @app.get("/contact")
 async def contact(request: Request):
     return templates.TemplateResponse("contact.html", {"request": request})
-
-
-@app.get("/catalog")
-async def catalog(request: Request):
-    return UNITS[0]
-    # return templates.TemplateResponse("catalog.html", {"request": request})
