@@ -1,0 +1,13 @@
+[
+  {
+    "adapter": "Debugpy",
+    "label": "run FastAPI",
+    "python": ".venv/bin/python",
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "request": "launch",
+    "module": "uvicorn",
+    "args": ["main:app", "--reload", "--port", "8080", "--workers", "8"],
+    "envFile": "${workspaceFolder}/.env",
+    "console": "integratedTerminal"
+  }
+]
