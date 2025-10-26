@@ -119,52 +119,67 @@
         <section class="mt-8 sm:mt-12">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="bg-white rounded-xl border border-slate-200 p-6">
-                    <h2 class="text-xl font-bold text-slate-800 mb-6">Filtrar unidades de refrigeración</h2>
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-xl font-bold text-slate-800">Filtrar unidades de refrigeración</h2>
+                        <button
+                            id="addFilter"
+                            class="inline-flex items-center rounded-lg bg-brand-600 px-4 py-2 text-white font-medium hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500"
+                        >
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                            </svg>
+                            Agregar nuevo filtro
+                        </button>
+                    </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <!-- Tipo de unidad -->
-                        <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-2">Tipo de unidad</label>
-                            <select
-                                id="unitType"
-                                class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
-                            >
-                                <option value="">Todos los tipos</option>
-                                <option value="HT">Termo Huabon</option>
-                                <option value="T">Montaje en techo</option>
-                                <option value="N">Montaje frontal</option>
-                                <option value="U">Montaje inferior</option>
-                                <option value="M">Monobloque</option>
-                                <option value="F">Congelados</option>
-                                <option value="S">Modo de espera</option>
-                                <option value="E">Eléctrico</option>
-                                <option value="C">Cobre</option>
-                            </select>
-                        </div>
-                        <!-- Capacidad mínima -->
-                        <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-2">Capacidad mínima (W)</label>
-                            <input
-                                type="number"
-                                id="minCapacity"
-                                placeholder="Ej: 2000"
-                                class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
-                            />
-                        </div>
-
-                        <!-- Capacidad máxima -->
-                        <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-2">Capacidad máxima (W)</label>
-                            <input
-                                type="number"
-                                id="maxCapacity"
-                                placeholder="Ej: 5000"
-                                class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
-                            />
+                    <!-- Active Filters Display -->
+                    <div id="activeFilters" class="mb-6">
+                        <div class="flex flex-wrap gap-2" id="filterTags">
+                            <!-- Active filter tags will be displayed here -->
                         </div>
                     </div>
 
-                    <div class="flex flex-wrap gap-3 mt-6">
+                    <!-- Filter Builder -->
+                    <div id="filterBuilder" class="hidden mb-6">
+                        <div class="bg-slate-50 rounded-lg p-4">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <!-- Filter Selection -->
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-2">Tipo de unidad</label>
+                                    <select
+                                        id="filterSelect"
+                                        class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                                    >
+                                        <option value="">Seleccionar tipo de unidad...</option>
+                                        <option value="unit_type:B">Batería (B)</option>
+                                        <option value="unit_type:C">Cobre (C)</option>
+                                        <option value="unit_type:F">Congelados (F)</option>
+                                        <option value="unit_type:D">Diésel (D)</option>
+                                        <option value="unit_type:E">Eléctrico (E)</option>
+                                        <option value="unit_type:HT">Termo Huabon (HT)</option>
+                                        <option value="unit_type:S">Modo de Espera (S)</option>
+                                        <option value="unit_type:STB">Modo de Espera Dividido (STB)</option>
+                                        <option value="unit_type:T">Montaje en Techo (T)</option>
+                                        <option value="unit_type:N">Montaje Frontal (N)</option>
+                                        <option value="unit_type:U">Montaje Inferior (U)</option>
+                                    </select>
+                                </div>
+
+                                <!-- Add Filter Button -->
+                                <div class="flex items-end">
+                                    <button
+                                        id="addFilterBtn"
+                                        class="w-full rounded-lg bg-brand-600 px-4 py-2 text-white font-medium hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                                        disabled
+                                    >
+                                        Agregar filtro
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-3">
                         <button
                             id="applyFilters"
                             class="inline-flex items-center rounded-lg bg-brand-600 px-4 py-2 text-white font-medium hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500"
@@ -429,19 +444,24 @@
 
         <!-- Catalog Filter Script -->
         <script>
-            class CatalogFilter {
+            class ComposableCatalogFilter {
                 constructor() {
                     this.filteredUnits = [];
                     this.hasSearched = false;
+                    this.activeFilters = [];
                     this.init();
                 }
 
                 async init() {
                     this.setupEventListeners();
-                    // Don't show any units on initial load
+                    this.updateFilterDisplay();
                 }
 
                 setupEventListeners() {
+                    // Main filter controls
+                    document.getElementById("addFilter").addEventListener("click", () => this.toggleFilterBuilder());
+                    document.getElementById("filterSelect").addEventListener("change", () => this.updateAddButton());
+                    document.getElementById("addFilterBtn").addEventListener("click", () => this.addFilter());
                     document.getElementById("applyFilters").addEventListener("click", () => this.applyFilters());
                     document.getElementById("clearFilters").addEventListener("click", () => this.clearFilters());
                     document.getElementById("sortBy").addEventListener("change", () => this.sortUnits());
@@ -458,20 +478,100 @@
                     });
                 }
 
+                toggleFilterBuilder() {
+                    const filterBuilder = document.getElementById("filterBuilder");
+                    const isHidden = filterBuilder.classList.contains("hidden");
+                    
+                    if (isHidden) {
+                        filterBuilder.classList.remove("hidden");
+                    } else {
+                        filterBuilder.classList.add("hidden");
+                    }
+                }
+
+                updateAddButton() {
+                    const filterSelect = document.getElementById("filterSelect").value;
+                    const addBtn = document.getElementById("addFilterBtn");
+                    
+                    addBtn.disabled = !filterSelect;
+                }
+
+                addFilter() {
+                    const filterSelect = document.getElementById("filterSelect");
+                    const selectedOption = filterSelect.options[filterSelect.selectedIndex];
+                    const filterValue = selectedOption.value;
+                    const filterLabel = selectedOption.text;
+                    
+                    if (!filterValue) return;
+
+                    // Parse the filter value (format: "unit_type:value")
+                    const [filterType, value] = filterValue.split(":");
+                    
+                    // Check if this exact filter already exists (same type AND same value)
+                    const existingFilter = this.activeFilters.find(f => f.type === filterType && f.value === value);
+                    if (existingFilter) {
+                        // Filter already exists, don't add it again
+                        return;
+                    }
+                    
+                    // Add the new filter
+                    this.activeFilters.push({
+                        type: filterType,
+                        value: value,
+                        label: filterLabel
+                    });
+
+                    this.updateFilterDisplay();
+                    this.resetFilterBuilder();
+                }
+
+                removeFilter(index) {
+                    this.activeFilters.splice(index, 1);
+                    this.updateFilterDisplay();
+                }
+
+                updateFilterDisplay() {
+                    const filterTags = document.getElementById("filterTags");
+                    
+                    if (this.activeFilters.length === 0) {
+                        filterTags.innerHTML = '<p class="text-sm text-slate-500">No hay filtros activos</p>';
+                        return;
+                    }
+
+                    filterTags.innerHTML = this.activeFilters.map((filter, index) => `
+                        <span class="inline-flex items-center gap-1 rounded-full bg-brand-100 px-3 py-1 text-sm font-medium text-brand-800">
+                            ${filter.label}
+                            <button onclick="catalogFilter.removeFilter(${index})" class="ml-1 rounded-full hover:bg-brand-200 p-0.5">
+                                <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </span>
+                    `).join("");
+                }
+
+                resetFilterBuilder() {
+                    document.getElementById("filterSelect").value = "";
+                    document.getElementById("addFilterBtn").disabled = true;
+                    document.getElementById("filterBuilder").classList.add("hidden");
+                }
+
                 async applyFilters() {
                     this.hasSearched = true;
-                    const filters = this.getFilterValues();
-                    await this.loadFilteredUnits(filters);
+                    await this.loadFilteredUnits();
                     this.sortUnits();
                     this.displayResults();
                 }
 
-                async loadFilteredUnits(filters) {
+                async loadFilteredUnits() {
                     try {
                         const params = new URLSearchParams();
-                        if (filters.unitType) params.append("unit_type", filters.unitType);
-                        if (filters.minCapacity > 0) params.append("min_capacity", filters.minCapacity);
-                        if (filters.maxCapacity < Infinity) params.append("max_capacity", filters.maxCapacity);
+                        
+                        // Build composable filter parameters (only unit_type now)
+                        this.activeFilters.forEach((filter, index) => {
+                            params.append(`filters[${index}][type]`, filter.type);
+                            params.append(`filters[${index}][value]`, filter.value);
+                        });
 
                         const response = await fetch(`/api/catalog?${params.toString()}`);
                         this.filteredUnits = await response.json();
@@ -479,14 +579,6 @@
                         console.error("Error loading filtered units:", error);
                         this.showError("Error al cargar las unidades filtradas");
                     }
-                }
-
-                getFilterValues() {
-                    return {
-                        unitType: document.getElementById("unitType").value,
-                        minCapacity: parseInt(document.getElementById("minCapacity").value) || 0,
-                        maxCapacity: parseInt(document.getElementById("maxCapacity").value) || Infinity,
-                    };
                 }
 
                 getUnitCapacity(unit) {
@@ -627,21 +719,11 @@
                 }
 
                 async clearFilters() {
-                    document.getElementById("unitType").value = "";
-                    document.getElementById("mountType").value = "";
-                    document.getElementById("powerType").value = "";
-                    document.getElementById("material").value = "";
-                    document.getElementById("minCapacity").value = "";
-                    document.getElementById("maxCapacity").value = "";
-
-                    // Reset search state and hide all results when clearing filters
+                    this.activeFilters = [];
                     this.hasSearched = false;
                     this.filteredUnits = [];
-                    this.displayResults();
-                }
-
-                async showAllUnits() {
-                    await this.loadFilteredUnits({});
+                    this.updateFilterDisplay();
+                    this.resetFilterBuilder();
                     this.displayResults();
                 }
 
@@ -752,7 +834,7 @@
             // Initialize the catalog filter when the page loads
             let catalogFilter;
             document.addEventListener("DOMContentLoaded", () => {
-                catalogFilter = new CatalogFilter();
+                catalogFilter = new ComposableCatalogFilter();
             });
         </script>
 
