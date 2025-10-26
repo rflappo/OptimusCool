@@ -16,7 +16,7 @@
       "Compresor": { "Marca": "HIGHLY", "Dis.": "14.5mL/rev" },
       "Condensador": { "Bobinas": "Flujo paralelo", "Cant. de venti": "1Pcs", "Tamaño": "900*720*210mm", "Peso": "40Kg" },
       "Evaporador": { "Bobinas": "Tubo y aleta de cobre", "Cant. de venti": "1Pcs", "Tamaño": "770*570*150mm", "Peso": "12Kg" },
-      "Tamaño de caja recomendado": { "min": 5, "max": 8, "unidad": "m3" }
+      "Tamaño de caja recomendado": { "min": "5m3", "max": "8m3" }
     }
   },
   {
@@ -36,7 +36,7 @@
       "Compresor": { "Marca": "HIGHLY", "Dis.": "14.5mL/rev" },
       "Condensador": { "Bobinas": "Flujo paralelo", "Cant. de venti": "2Pcs", "Tamaño": "1030*850*205mm", "Peso": "45Kg" },
       "Evaporador": { "Bobinas": "Tubo y aleta de cobre", "Cant. de venti": "2Pcs", "Tamaño": "1010*570*150mm", "Peso": "15Kg" },
-      "Tamaño de caja recomendado": { "min": 8, "max": 12, "unidad": "m3" }
+      "Tamaño de caja recomendado": { "min": "8m3", "max": "12m3" }
     }
   },
   {
@@ -56,7 +56,7 @@
       "Compresor": { "Marca": "Highly", "Dis.": "14.5mL/rev" },
       "Condensador": { "Bobinas": "Flujo paralelo", "Cant. de venti": "2Pcs", "Tamaño": "1020*480*310mm", "Peso": "40Kg" },
       "Evaporador": { "Bobinas": "Tubo y aleta de cobre", "Cant. de venti": "2Pcs", "Tamaño": "1010*570*150mm", "Peso": "15Kg" },
-      "Tamaño de caja recomendado": { "min": 8, "max": 12, "unidad": "m3" }
+      "Tamaño de caja recomendado": { "min": "8m3", "max": "12m3" }
     }
   },
   {
@@ -76,7 +76,7 @@
       "Compresor": { "Marca": "Highly", "Dis.": "14.5mL/rev" },
       "Condensador": { "Bobinas": "Flujo paralelo", "Cant. de venti": "2Pcs", "Tamaño": "920*380*360mm", "Peso": "46Kg" },
       "Evaporador": { "Bobinas": "Tubo y aleta de cobre", "Cant. de venti": "2Pcs", "Tamaño": "1010*570*150mm", "Peso": "15Kg" },
-      "Tamaño de caja recomendado": { "min": 8, "max": 12, "unidad": "m3" }
+      "Tamaño de caja recomendado": { "min": "8m3", "max": "12m3" }
     }
   },
   {
@@ -95,7 +95,7 @@
       "Compresor": { "Modelo": "5S14,138cc/r" },
       "Condensador": { "Bobinas": "Flujo paralelo", "Cant. de venti": "1Pcs", "Tamaño": "930*720*190mm", "Peso": "23.5Kg" },
       "Evaporador": { "Bobinas": "Tubo y aleta de cobre", "Cant. de venti": "1Pcs", "Tamaño": "770*570*150mm", "Peso": "12Kg" },
-      "Tamaño de caja recomendado": { "min": 6, "max": 10, "unidad": "m3" }
+      "Tamaño de caja recomendado": { "min": "6m3", "max": "10m3" }
     }
   },
   {
@@ -114,7 +114,7 @@
       "Compresor": { "Modelo": "5S14,138cc/r" },
       "Condensador": { "Bobinas": "Flujo paralelo", "Cant. de venti": "1Pcs", "Tamaño": "930*720*190mm", "Peso": "23.5Kg" },
       "Evaporador": { "Bobinas": "Tubo y aleta de cobre", "Cant. de venti": "2Pcs", "Tamaño": "1010*570*150mm", "Peso": "15Kg" },
-      "Tamaño de caja recomendado": { "min": 8, "max": 12, "unidad": "m3" }
+      "Tamaño de caja recomendado": { "min": "8m3", "max": "12m3" }
     }
   },
   {
@@ -133,7 +133,7 @@
       "Compresor": { "Modelo": "Carrier QP16, 163cc/r" },
       "Condensador": { "Bobinas": "Flujo paralelo", "Cant. de venti": "2Pcs", "Tamaño": "1050*750*180mm", "Peso": "30Kg" },
       "Evaporador": { "Bobinas": "Tubo y aleta de cobre", "Cant. de venti": "2Pcs", "Tamaño": "1010*570*150mm", "Peso": "15Kg" },
-      "Tamaño de caja recomendado": { "min": 10, "max": 16, "unidad": "m3" }
+      "Tamaño de caja recomendado": { "min": "10m3", "max": "16m3" }
     }
   },
   {
@@ -152,7 +152,7 @@
       "Compresor": { "Modelo": "Carrier QP16, 163cc/r" },
       "Condensador": { "Bobinas": "Flujo paralelo", "Cant. de venti": "2Pcs", "Tamaño": "1050*750*180mm", "Peso": "30Kg" },
       "Evaporador": { "Bobinas": "Tubo y aleta de cobre", "Cant. de venti": "2Pcs", "Tamaño": "980*570*210mm", "Peso": "20Kg" },
-      "Tamaño de caja recomendado": { "min": 16, "max": 22, "unidad": "m3" }
+      "Tamaño de caja recomendado": { "min": "16m3", "max": "22m3" }
     }
   },
   {
@@ -171,7 +171,7 @@
       "Compresor": { "Modelo": "5S14,138cc/r" },
       "Condensador": { "Bobinas": "Flujo paralelo", "Cant. de venti": "1Pcs", "Tamaño": "920*540*230mm", "Peso": "25Kg" },
       "Evaporador": { "Bobinas": "Tubo y aleta de cobre", "Cant. de venti": "1Pcs", "Tamaño": "770*570*150mm", "Peso": "12Kg" },
-      "Tamaño de caja recomendado": { "min": 6, "max": 12, "unidad": "m3" }
+      "Tamaño de caja recomendado": { "min": "6m3", "max": "12m3" }
     }
   },
   {
@@ -190,7 +190,7 @@
       "Compresor": { "Modelo": "5S14,138cc/r" },
       "Condensador": { "Bobinas": "Flujo paralelo", "Cant. de venti": "1Pcs", "Tamaño": "920*540*230mm", "Peso": "25Kg" },
       "Evaporador": { "Bobinas": "Tubo y aleta de cobre", "Cant. de venti": "2Pcs", "Tamaño": "1010*570*150mm", "Peso": "15Kg" },
-      "Tamaño de caja recomendado": { "min": 8, "max": 15, "unidad": "m3" }
+      "Tamaño de caja recomendado": { "min": "8m3", "max": "15m3" }
     }
   },
   {
@@ -209,7 +209,7 @@
       "Compresor": { "Modelo": "Carrier QP16, 163cc/r" },
       "Condensador": { "Bobinas": "Flujo paralelo", "Cant. de venti": "2Pcs", "Tamaño": "1010*540*250mm", "Peso": "26Kg" },
       "Evaporador": { "Bobinas": "Tubo y aleta de cobre", "Cant. de venti": "2Pcs", "Tamaño": "980*570*210mm", "Peso": "20Kg" },
-      "Tamaño de caja recomendado": { "min": 12, "max": 20, "unidad": "m3" }
+      "Tamaño de caja recomendado": { "min": "12m3", "max": "20m3" }
     }
   },
   {
@@ -228,7 +228,7 @@
       "Compresor": { "Modelo": "Carrier QP16,163cc/r" },
       "Condensador": { "Bobinas": "Flujo paralelo", "Cant. de venti": "2Pcs", "Tamaño": "1020*480*310mm", "Peso": "28.5Kg" },
       "Evaporador": { "Bobinas": "Tubo y aleta de cobre", "Cant. de venti": "2Pcs", "Tamaño": "980*570*210mm", "Peso": "20Kg" },
-      "Tamaño de caja recomendado": { "min": 16, "max": 22, "unidad": "m3" }
+      "Tamaño de caja recomendado": { "min": "16m3", "max": "22m3" }
     }
   },
   {
@@ -247,7 +247,7 @@
       "Compresor": { "Modelo": "Carrier QP16, 163cc/r" },
       "Condensador": { "Bobinas": "Flujo paralelo", "Cant. de venti": "2Pcs", "Tamaño": "1200*580*390mm", "Peso": "36.5Kg" },
       "Evaporador": { "Bobinas": "Tubo y aleta de cobre", "Cant. de venti": "3Pcs", "Tamaño": "1280*610*220mm", "Peso": "24Kg" },
-      "Tamaño de caja recomendado": { "min": 18, "max": 25, "unidad": "m3" }
+      "Tamaño de caja recomendado": { "min": "18m3", "max": "25m3" }
     }
   },
   {
@@ -266,7 +266,7 @@
       "Compresor": { "Modelo": "Carrier QP16, 163cc/r" },
       "Condensador": { "Bobinas": "Flujo paralelo", "Cant. de venti": "2Pcs", "Tamaño": "1200*580*390mm", "Peso": "39Kg" },
       "Evaporador": { "Bobinas": "Tubo y aleta de cobre", "Cant. de venti": "3Pcs", "Tamaño": "1280*610*220mm", "Peso": "25Kg" },
-      "Tamaño de caja recomendado": { "min": 25, "max": 35, "unidad": "m3" }
+      "Tamaño de caja recomendado": { "min": "25m3", "max": "35m3" }
     }
   },
   {
@@ -285,7 +285,7 @@
       "Compresor": { "Modelo": "Carrier QP16, 163cc/r" },
       "Condensador": { "Bobinas": "Flujo paralelo", "Cant. de venti": "2Pcs", "Tamaño": "1260*600*415mm", "Peso": "36Kg" },
       "Evaporador": { "Bobinas": "Tubo y aleta de cobre", "Cant. de venti": "3Pcs", "Tamaño": "1030*570*295mm", "Peso": "26Kg" },
-      "Tamaño de caja recomendado": { "min": 22, "max": 30, "unidad": "m3" }
+      "Tamaño de caja recomendado": { "min": "22m3", "max": "30m3" }
     }
   },
   {
@@ -304,7 +304,7 @@
       "Compresor": { "Modelo": "Carrier QP21, 163cc/r" },
       "Condensador": { "Bobinas": "Flujo paralelo", "Cant. de venti": "2Pcs", "Tamaño": "1400*530*510mm", "Peso": "50Kg" },
       "Evaporador": { "Bobinas": "Tubo y aleta de cobre", "Cant. de venti": "3Pcs", "Tamaño": "1240*650*355mm", "Peso": "43Kg" },
-      "Tamaño de caja recomendado": { "min": 35, "max": 45, "unidad": "m3" }
+      "Tamaño de caja recomendado": { "min": "35m3", "max": "45m3" }
     }
   },
   {
@@ -323,7 +323,7 @@
       "Compresor": { "Modelo": "Carrier QP16, 163cc/r" },
       "Condensador": { "Bobinas": "Tubo y aleta de cobre", "Cant. de venti": "2Pcs", "Tamaño": "1120*405*510mm", "Peso": "42.5Kg" },
       "Evaporador": { "Bobinas": "Tubo y aleta de cobre", "Cant. de venti": "3Pcs", "Tamaño": "1280*610*220mm", "Peso": "24Kg" },
-      "Tamaño de caja recomendado": { "min": 20, "max": 30, "unidad": "m3" }
+      "Tamaño de caja recomendado": { "min": "20m3", "max": "30m3" }
     }
   },
   {
@@ -342,7 +342,7 @@
       "Compresor": { "Modelo": "Carrier QP21, 215cc/r" },
       "Condensador": { "Bobinas": "Tubo y aleta de cobre", "Cant. de venti": "2Pcs", "Tamaño": "1240*480*410mm", "Peso": "52Kg" },
       "Evaporador": { "Bobinas": "Tubo y aleta de cobre", "Cant. de venti": "3Pcs", "Tamaño": "1245*530*360mm", "Peso": "33Kg" },
-      "Tamaño de caja recomendado": { "min": 30, "max": 40, "unidad": "m3" }
+      "Tamaño de caja recomendado": { "min": "30m3", "max": "40m3" }
     }
   },
   {
@@ -361,7 +361,7 @@
       "Compresor": { "Modelo": "Carrier QP21, 215cc/r" },
       "Condensador": { "Bobinas": "Tubo y aleta de cobre", "Cant. de venti": "3Pcs", "Tamaño": "1410*560*420mm", "Peso": "68.5Kg" },
       "Evaporador": { "Bobinas": "Tubo y aleta de cobre", "Cant. de venti": "3Pcs", "Tamaño": "1500*650*50mm", "Peso": "50Kg" },
-      "Tamaño de caja recomendado": { "min": 40, "max": 50, "unidad": "m3" }
+      "Tamaño de caja recomendado": { "min": "40m3", "max": "50m3" }
     }
   },
   {
@@ -381,7 +381,7 @@
       "Compresor": { "Modelo": "Carrier QP21, 215cc/r" },
       "Condensador": { "Bobinas": "Flujo paralelo", "Cant. de venti": "2Pcs", "Tamaño": "1290*540*465mm", "Peso": "49Kg" },
       "Evaporador": { "Bobinas": "Tubo y aleta de cobre", "Cant. de venti": "4Pcs", "Tamaño": "1380*630*250mm", "Peso": "36.5Kg" },
-      "Tamaño de caja recomendado": { "min": 40, "max": 50, "unidad": "m3" }
+      "Tamaño de caja recomendado": { "min": "40m3", "max": "50m3" }
     }
   },
   {
@@ -405,7 +405,7 @@
         "Evaporador": "1210*635*330mm"
       },
       "Peso del producto": "580Kg",
-      "Tamaño de caja recomendado": { "min": 50, "max": 60, "unidad": "m3" }
+      "Tamaño de caja recomendado": { "min": "50m3", "max": "60m3" }
     }
   },
   {
@@ -424,7 +424,7 @@
       "Compresor": { "En ruta": { "Modelo": "5S14,138 cc/r" }, "Standby": { "Marca": "Highly", "Dis.": "35.6mL/rev" } },
       "Condensador": { "Bobinas": "Flujo paralelo", "Cant. de venti": "1Pcs", "Tamaño": "1345*550*230mm", "Peso": "63Kg" },
       "Evaporador": { "Bobinas": "Tubo y aleta de cobre", "Cant. de venti": "2Pcs", "Tamaño": "1010*570*150mm", "Peso": "15Kg" },
-      "Tamaño de caja recomendado": { "min": 8, "max": 15, "unidad": "m3" }
+      "Tamaño de caja recomendado": { "min": "8m3", "max": "15m3" }
     }
   },
   {
@@ -443,7 +443,7 @@
       "Compresor": { "En ruta": { "Modelo": "Carrier QP16,163cc/r" }, "Standby": { "Marca": "Highly", "Dis.": "35.6mL/rev" } },
       "Condensador": { "Bobinas": "Flujo paralelo", "Cant. de venti": "2Pcs", "Tamaño": "1200*520*355mm", "Peso": "54Kg" },
       "Evaporador": { "Bobinas": "Tubo y aleta de cobre", "Cant. de venti": "2Pcs", "Tamaño": "980*570*210mm", "Peso": "20Kg" },
-      "Tamaño de caja recomendado": { "min": 16, "max": 22, "unidad": "m3" }
+      "Tamaño de caja recomendado": { "min": "16m3", "max": "22m3" }
     }
   },
   {
@@ -461,7 +461,7 @@
       "Compresor": { "En ruta": { "Modelo": "Carrier QP16,163cc/r" }, "Standby": { "Marca": "Highly", "Dis.": "35.6 o 48.8mL/rev" } },
       "Condensador": { "Bobinas": "Flujo paralelo", "Cant. de venti": "2Pcs", "Tamaño": "1260*600*415mm", "Peso": "86Kg" },
       "Evaporador": { "Bobinas": "Tubo y aleta de cobre", "Cant. de venti": "3Pcs", "Tamaño": "1030*570*295mm", "Peso": "26Kg" },
-      "Tamaño de caja recomendado": { "min": 22, "max": 30, "unidad": "m3" }
+      "Tamaño de caja recomendado": { "min": "22m3", "max": "30m3" }
     }
   },
   {
@@ -470,7 +470,7 @@
     "Datos": {
       "Capacidad de enfriamiento (0C)": "4500W",
       "Capacidad de enfriamiento (-18C)": "2500W",
-      "Tamaño de caja recomendado": { "min": 8, "max": 12, "unidad": "m3" },
+      "Tamaño de caja recomendado": { "min": "8m3", "max": "12m3" },
       "Compresor de reserva": "DDH356 (HIGHLY)",
       "Fuerza": "2200W",
       "Tamaño del producto": "480*280*380mm",
@@ -486,7 +486,7 @@
     "Datos": {
       "Capacidad de enfriamiento (0C)": "7850W",
       "Capacidad de enfriamiento (-18C)": "3700W",
-      "Tamaño de caja recomendado": { "min": 25, "max": 35, "unidad": "m3" },
+      "Tamaño de caja recomendado": { "min": "25m3", "max": "35m3" },
       "Compresor de reserva": "ZB21KQE EMERSON (3P)",
       "Fuerza": "3610W",
       "Tamaño del producto": "600*450*430mm",
@@ -502,7 +502,7 @@
     "Datos": {
       "Capacidad de enfriamiento (0C)": "10650W",
       "Capacidad de enfriamiento (-18C)": "5050W",
-      "Tamaño de caja recomendado": { "min": 40, "max": 60, "unidad": "m3" },
+      "Tamaño de caja recomendado": { "min": "40m3", "max": "60m3" },
       "Compresor de reserva": "ZB29KQE EMERSON (4P)",
       "Fuerza": "4250W",
       "Tamaño del producto": "600*450*430mm",
