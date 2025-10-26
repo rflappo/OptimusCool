@@ -73,8 +73,8 @@
 
                     <!-- Desktop -->
                     <div class="hidden md:flex items-center gap-6">
-                        <a class="font-bold text-lg hover:text-brand-700" href="#">Inicio</a>
-                        <a class="font-bold text-lg hover:text-brand-700" href="{{ url_for('catalog') }}">Catálogo</a>
+                        <a class="font-bold text-lg hover:text-brand-700" href="{{ url_for('home') }}">Inicio</a>
+                        <a class="font-bold text-lg hover:text-brand-700" href="#">Catálogo</a>
                         <a class="font-bold text-lg hover:text-brand-700" href="{{ url_for('contact') }}">Contacto</a>
                     </div>
                     <a
@@ -120,81 +120,76 @@
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="bg-white rounded-xl border border-slate-200 p-6">
                     <h2 class="text-xl font-bold text-slate-800 mb-6">Filtrar unidades de refrigeración</h2>
-                    
+
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         <!-- Tipo de unidad -->
                         <div>
                             <label class="block text-sm font-medium text-slate-700 mb-2">Tipo de unidad</label>
-                            <select id="unitType" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500">
+                            <select
+                                id="unitType"
+                                class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                            >
                                 <option value="">Todos los tipos</option>
                                 <option value="HT">Termo Huabon</option>
-                                <option value="TR">Refrigeración de techo</option>
-                                <option value="F">Congelados</option>
-                                <option value="STB">Modo de espera dividido</option>
-                                <option value="E">Eléctrico</option>
-                            </select>
-                        </div>
-
-                        <!-- Montaje -->
-                        <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-2">Tipo de montaje</label>
-                            <select id="mountType" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500">
-                                <option value="">Todos los montajes</option>
                                 <option value="T">Montaje en techo</option>
                                 <option value="N">Montaje frontal</option>
                                 <option value="U">Montaje inferior</option>
                                 <option value="M">Monobloque</option>
-                            </select>
-                        </div>
-
-                        <!-- Alimentación -->
-                        <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-2">Tipo de alimentación</label>
-                            <select id="powerType" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500">
-                                <option value="">Todos los tipos</option>
-                                <option value="A">Alimentación del AC</option>
-                                <option value="B">Batería</option>
-                                <option value="E">Eléctrico</option>
-                                <option value="D">Alimentación de DC</option>
+                                <option value="F">Congelados</option>
                                 <option value="S">Modo de espera</option>
-                                <option value="DS">Unidad diésel con modo de espera</option>
-                                <option value="TS">Modo de espera y de techo</option>
-                                <option value="EV">Vehículo eléctrico</option>
-                            </select>
-                        </div>
-
-                        <!-- Material -->
-                        <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-2">Material</label>
-                            <select id="material" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500">
-                                <option value="">Todos los materiales</option>
+                                <option value="E">Eléctrico</option>
                                 <option value="C">Cobre</option>
                             </select>
                         </div>
-
                         <!-- Capacidad mínima -->
                         <div>
                             <label class="block text-sm font-medium text-slate-700 mb-2">Capacidad mínima (W)</label>
-                            <input type="number" id="minCapacity" placeholder="Ej: 2000" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500">
+                            <input
+                                type="number"
+                                id="minCapacity"
+                                placeholder="Ej: 2000"
+                                class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                            />
                         </div>
 
                         <!-- Capacidad máxima -->
                         <div>
                             <label class="block text-sm font-medium text-slate-700 mb-2">Capacidad máxima (W)</label>
-                            <input type="number" id="maxCapacity" placeholder="Ej: 5000" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500">
+                            <input
+                                type="number"
+                                id="maxCapacity"
+                                placeholder="Ej: 5000"
+                                class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                            />
                         </div>
                     </div>
 
                     <div class="flex flex-wrap gap-3 mt-6">
-                        <button id="applyFilters" class="inline-flex items-center rounded-lg bg-brand-600 px-4 py-2 text-white font-medium hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500">
+                        <button
+                            id="applyFilters"
+                            class="inline-flex items-center rounded-lg bg-brand-600 px-4 py-2 text-white font-medium hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500"
+                        >
                             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path>
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"
+                                ></path>
                             </svg>
                             Aplicar filtros
                         </button>
-                        <button id="clearFilters" class="inline-flex items-center rounded-lg border border-slate-300 px-4 py-2 text-slate-700 font-medium hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-brand-500">
+                        <button
+                            id="clearFilters"
+                            class="inline-flex items-center rounded-lg bg-accent px-4 py-2 text-white font-medium hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-red-500"
+                        >
                             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12"
+                                ></path>
                             </svg>
                             Limpiar filtros
                         </button>
@@ -208,14 +203,30 @@
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div id="loadingIndicator" class="hidden text-center py-8">
                     <div class="inline-flex items-center">
-                        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-brand-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        <svg
+                            class="animate-spin -ml-1 mr-3 h-5 w-5 text-brand-600"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                        >
+                            <circle
+                                class="opacity-25"
+                                cx="12"
+                                cy="12"
+                                r="10"
+                                stroke="currentColor"
+                                stroke-width="4"
+                            ></circle>
+                            <path
+                                class="opacity-75"
+                                fill="currentColor"
+                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                            ></path>
                         </svg>
                         Cargando unidades...
                     </div>
                 </div>
-                
+
                 <div id="resultsContainer" class="hidden">
                     <div class="flex items-center justify-between mb-6">
                         <h3 class="text-lg font-semibold text-slate-800">
@@ -223,22 +234,45 @@
                         </h3>
                         <div class="flex items-center gap-2">
                             <label class="text-sm text-slate-600">Ordenar por:</label>
-                            <select id="sortBy" class="rounded-lg border border-slate-300 px-3 py-1 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500">
+                            <select
+                                id="sortBy"
+                                class="rounded-lg border border-slate-300 px-3 py-1 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                            >
                                 <option value="modelo">Modelo</option>
                                 <option value="capacidad">Capacidad</option>
                                 <option value="volumen">Volumen recomendado</option>
                             </select>
                         </div>
                     </div>
-                    
+
                     <div id="unitsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         <!-- Units will be populated here -->
                     </div>
                 </div>
 
+                <div id="initialMessage" class="text-center py-12">
+                    <svg class="mx-auto h-12 w-12 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"
+                        ></path>
+                    </svg>
+                    <h3 class="mt-2 text-sm font-medium text-slate-900">Aplique filtros de búsqueda</h3>
+                    <p class="mt-1 text-sm text-slate-500">
+                        Aplique filtros para buscar entre las más de 20 unidades disponibles.
+                    </p>
+                </div>
+
                 <div id="noResults" class="hidden text-center py-12">
                     <svg class="mx-auto h-12 w-12 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.47-.881-6.08-2.33"></path>
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.47-.881-6.08-2.33"
+                        ></path>
                     </svg>
                     <h3 class="mt-2 text-sm font-medium text-slate-900">No se encontraron unidades</h3>
                     <p class="mt-1 text-sm text-slate-500">Intenta ajustar los filtros para encontrar lo que buscas.</p>
@@ -326,34 +360,54 @@
         </footer>
 
         <!-- Unit Details Modal -->
-        <div id="unitModal" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div
+            id="unitModal"
+            class="fixed inset-0 z-50 hidden overflow-y-auto"
+            aria-labelledby="modal-title"
+            role="dialog"
+            aria-modal="true"
+        >
             <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
                 <!-- Background overlay -->
                 <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
 
                 <!-- Modal panel -->
-                <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full">
+                <div
+                    class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full"
+                >
                     <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                         <div class="flex items-start justify-between mb-4">
                             <div>
                                 <h3 id="modalTitle" class="text-2xl font-bold text-slate-800"></h3>
                                 <p id="modalSubtitle" class="text-sm text-slate-600 mt-1"></p>
                             </div>
-                            <button id="closeModal" class="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-brand-500">
+                            <button
+                                id="closeModal"
+                                class="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-brand-500"
+                            >
                                 <span class="sr-only">Cerrar</span>
                                 <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M6 18L18 6M6 6l12 12"
+                                    />
                                 </svg>
                             </button>
                         </div>
-                        
+
                         <div id="modalContent" class="space-y-6">
                             <!-- Content will be populated by JavaScript -->
                         </div>
                     </div>
-                    
+
                     <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                        <button id="closeModalBtn" type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-brand-600 text-base font-medium text-white hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500 sm:ml-3 sm:w-auto sm:text-sm">
+                        <button
+                            id="closeModalBtn"
+                            type="button"
+                            class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-brand-600 text-base font-medium text-white hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500 sm:ml-3 sm:w-auto sm:text-sm"
+                        >
                             Cerrar
                         </button>
                     </div>
@@ -378,39 +432,34 @@
             class CatalogFilter {
                 constructor() {
                     this.filteredUnits = [];
+                    this.hasSearched = false;
                     this.init();
                 }
 
                 async init() {
                     this.setupEventListeners();
-                    await this.showAllUnits();
+                    // Don't show any units on initial load
                 }
 
-
                 setupEventListeners() {
-                    document.getElementById('applyFilters').addEventListener('click', () => this.applyFilters());
-                    document.getElementById('clearFilters').addEventListener('click', () => this.clearFilters());
-                    document.getElementById('sortBy').addEventListener('change', () => this.sortUnits());
-                    
+                    document.getElementById("applyFilters").addEventListener("click", () => this.applyFilters());
+                    document.getElementById("clearFilters").addEventListener("click", () => this.clearFilters());
+                    document.getElementById("sortBy").addEventListener("change", () => this.sortUnits());
+
                     // Modal event listeners
-                    document.getElementById('closeModal').addEventListener('click', () => this.closeModal());
-                    document.getElementById('closeModalBtn').addEventListener('click', () => this.closeModal());
-                    
+                    document.getElementById("closeModal").addEventListener("click", () => this.closeModal());
+                    document.getElementById("closeModalBtn").addEventListener("click", () => this.closeModal());
+
                     // Close modal when clicking outside
-                    document.getElementById('unitModal').addEventListener('click', (e) => {
-                        if (e.target.id === 'unitModal') {
+                    document.getElementById("unitModal").addEventListener("click", (e) => {
+                        if (e.target.id === "unitModal") {
                             this.closeModal();
                         }
-                    });
-                    
-                    // Auto-apply filters on input change
-                    const filterInputs = ['unitType', 'mountType', 'powerType', 'material', 'minCapacity', 'maxCapacity'];
-                    filterInputs.forEach(id => {
-                        document.getElementById(id).addEventListener('change', () => this.applyFilters());
                     });
                 }
 
                 async applyFilters() {
+                    this.hasSearched = true;
                     const filters = this.getFilterValues();
                     await this.loadFilteredUnits(filters);
                     this.sortUnits();
@@ -420,57 +469,50 @@
                 async loadFilteredUnits(filters) {
                     try {
                         const params = new URLSearchParams();
-                        if (filters.unitType) params.append('unit_type', filters.unitType);
-                        if (filters.mountType) params.append('mount_type', filters.mountType);
-                        if (filters.powerType) params.append('power_type', filters.powerType);
-                        if (filters.material) params.append('material', filters.material);
-                        if (filters.minCapacity > 0) params.append('min_capacity', filters.minCapacity);
-                        if (filters.maxCapacity < Infinity) params.append('max_capacity', filters.maxCapacity);
+                        if (filters.unitType) params.append("unit_type", filters.unitType);
+                        if (filters.minCapacity > 0) params.append("min_capacity", filters.minCapacity);
+                        if (filters.maxCapacity < Infinity) params.append("max_capacity", filters.maxCapacity);
 
                         const response = await fetch(`/api/catalog?${params.toString()}`);
                         this.filteredUnits = await response.json();
                     } catch (error) {
-                        console.error('Error loading filtered units:', error);
-                        this.showError('Error al cargar las unidades filtradas');
+                        console.error("Error loading filtered units:", error);
+                        this.showError("Error al cargar las unidades filtradas");
                     }
                 }
 
                 getFilterValues() {
                     return {
-                        unitType: document.getElementById('unitType').value,
-                        mountType: document.getElementById('mountType').value,
-                        powerType: document.getElementById('powerType').value,
-                        material: document.getElementById('material').value,
-                        minCapacity: parseInt(document.getElementById('minCapacity').value) || 0,
-                        maxCapacity: parseInt(document.getElementById('maxCapacity').value) || Infinity
+                        unitType: document.getElementById("unitType").value,
+                        minCapacity: parseInt(document.getElementById("minCapacity").value) || 0,
+                        maxCapacity: parseInt(document.getElementById("maxCapacity").value) || Infinity,
                     };
                 }
 
-
                 getUnitCapacity(unit) {
                     const datos = unit.Datos || {};
-                    const refrigeracion = datos['Capacidad de refrigeración'] || {};
-                    const capacidad0a38 = refrigeracion['0a38'] || [];
-                    
+                    const refrigeracion = datos["Capacidad de refrigeración"] || {};
+                    const capacidad0a38 = refrigeracion["0a38"] || [];
+
                     if (capacidad0a38.length > 0) {
                         const watts = capacidad0a38[0];
                         const match = watts.match(/(\d+)W/);
                         return match ? parseInt(match[1]) : 0;
                     }
-                    
+
                     return 0;
                 }
 
                 sortUnits() {
-                    const sortBy = document.getElementById('sortBy').value;
-                    
+                    const sortBy = document.getElementById("sortBy").value;
+
                     this.filteredUnits.sort((a, b) => {
                         switch (sortBy) {
-                            case 'modelo':
+                            case "modelo":
                                 return a.Modelo.localeCompare(b.Modelo);
-                            case 'capacidad':
+                            case "capacidad":
                                 return this.getUnitCapacity(b) - this.getUnitCapacity(a);
-                            case 'volumen':
+                            case "volumen":
                                 const volA = this.getRecommendedVolume(a);
                                 const volB = this.getRecommendedVolume(b);
                                 return volB - volA;
@@ -478,30 +520,40 @@
                                 return 0;
                         }
                     });
-                    
+
                     this.displayResults();
                 }
 
                 getRecommendedVolume(unit) {
                     const datos = unit.Datos || {};
-                    const volumen = datos['Tamaño de caja recomendado'] || {};
+                    const volumen = datos["Tamaño de caja recomendado"] || {};
                     return volumen.max || 0;
                 }
 
                 displayResults() {
-                    const loadingIndicator = document.getElementById('loadingIndicator');
-                    const resultsContainer = document.getElementById('resultsContainer');
-                    const noResults = document.getElementById('noResults');
-                    const resultsCount = document.getElementById('resultsCount');
-                    const unitsGrid = document.getElementById('unitsGrid');
+                    const loadingIndicator = document.getElementById("loadingIndicator");
+                    const resultsContainer = document.getElementById("resultsContainer");
+                    const noResults = document.getElementById("noResults");
+                    const initialMessage = document.getElementById("initialMessage");
+                    const resultsCount = document.getElementById("resultsCount");
+                    const unitsGrid = document.getElementById("unitsGrid");
 
                     // Hide all sections first
-                    loadingIndicator.classList.add('hidden');
-                    resultsContainer.classList.add('hidden');
-                    noResults.classList.add('hidden');
+                    loadingIndicator.classList.add("hidden");
+                    resultsContainer.classList.add("hidden");
+                    noResults.classList.add("hidden");
+
+                    // Show initial message if no search has been made
+                    if (!this.hasSearched) {
+                        if (initialMessage) initialMessage.classList.remove("hidden");
+                        return;
+                    }
+
+                    // Hide initial message if search has been made
+                    if (initialMessage) initialMessage.classList.add("hidden");
 
                     if (this.filteredUnits.length === 0) {
-                        noResults.classList.remove('hidden');
+                        noResults.classList.remove("hidden");
                         return;
                     }
 
@@ -509,10 +561,10 @@
                     resultsCount.textContent = this.filteredUnits.length;
 
                     // Generate unit cards
-                    unitsGrid.innerHTML = this.filteredUnits.map(unit => this.createUnitCard(unit)).join('');
+                    unitsGrid.innerHTML = this.filteredUnits.map((unit) => this.createUnitCard(unit)).join("");
 
                     // Show results
-                    resultsContainer.classList.remove('hidden');
+                    resultsContainer.classList.remove("hidden");
                 }
 
                 createUnitCard(unit) {
@@ -521,10 +573,21 @@
                     const datos = unit.Datos || {};
                     const voltaje = datos.Voltaje || {};
                     const voltajeDC = voltaje.DC || [];
-                    const voltajeStr = voltajeDC.length > 0 ? voltajeDC.join(', ') : 'N/A';
-                    
+                    const voltajeStr = voltajeDC.length > 0 ? voltajeDC.join(", ") : "N/A";
+                    const imageUrl = `/static/img/unidades/${unit.Modelo}.png`;
+
                     return `
                         <div class="bg-white rounded-lg border border-slate-200 p-6 hover:shadow-lg transition-shadow">
+                            <!-- Unit Image -->
+                            <div class="mb-4 flex items-center justify-center h-48 bg-slate-50 rounded-lg overflow-hidden">
+                                <img
+                                    src="${imageUrl}"
+                                    alt="${unit.Modelo}"
+                                    class="w-full h-full object-contain"
+                                    onerror="this.parentElement.innerHTML='<div class=\\'text-slate-400 text-center\\'>Sin imagen</div>'"
+                                />
+                            </div>
+
                             <div class="flex items-start justify-between mb-4">
                                 <div>
                                     <h4 class="text-lg font-semibold text-slate-800">${unit.Modelo}</h4>
@@ -534,10 +597,10 @@
                                     ${capacidad}W
                                 </span>
                             </div>
-                            
+
                             <div class="space-y-3">
                                 <div class="flex justify-between text-sm">
-                                    <span class="text-slate-500">Capacidad:</span>
+                                    <span class="text-slate-500">Capacidad de refrigeración:</span>
                                     <span class="font-medium">${capacidad}W</span>
                                 </div>
                                 <div class="flex justify-between text-sm">
@@ -550,10 +613,10 @@
                                 </div>
                                 <div class="flex justify-between text-sm">
                                     <span class="text-slate-500">Rango de temperatura:</span>
-                                    <span class="font-medium">${datos['Rango de temperatura']?.min || 'N/A'}°C a ${datos['Rango de temperatura']?.max || 'N/A'}°C</span>
+                                    <span class="font-medium">${datos["Rango de temperatura"]?.min || "N/A"}°C a ${datos["Rango de temperatura"]?.max || "N/A"}°C</span>
                                 </div>
                             </div>
-                            
+
                             <div class="mt-4 pt-4 border-t border-slate-100">
                                 <button onclick="catalogFilter.openModal('${unit.Modelo}')" class="w-full rounded-lg bg-brand-600 px-4 py-2 text-white font-medium hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500">
                                     Ver detalles
@@ -564,15 +627,16 @@
                 }
 
                 async clearFilters() {
-                    document.getElementById('unitType').value = '';
-                    document.getElementById('mountType').value = '';
-                    document.getElementById('powerType').value = '';
-                    document.getElementById('material').value = '';
-                    document.getElementById('minCapacity').value = '';
-                    document.getElementById('maxCapacity').value = '';
-                    
-                    await this.loadFilteredUnits({});
-                    this.sortUnits();
+                    document.getElementById("unitType").value = "";
+                    document.getElementById("mountType").value = "";
+                    document.getElementById("powerType").value = "";
+                    document.getElementById("material").value = "";
+                    document.getElementById("minCapacity").value = "";
+                    document.getElementById("maxCapacity").value = "";
+
+                    // Reset search state and hide all results when clearing filters
+                    this.hasSearched = false;
+                    this.filteredUnits = [];
                     this.displayResults();
                 }
 
@@ -582,269 +646,112 @@
                 }
 
                 showError(message) {
-                    const resultsContainer = document.getElementById('resultsContainer');
-                    const noResults = document.getElementById('noResults');
-                    
-                    resultsContainer.classList.add('hidden');
-                    noResults.classList.remove('hidden');
-                    noResults.querySelector('h3').textContent = 'Error';
-                    noResults.querySelector('p').textContent = message;
+                    const resultsContainer = document.getElementById("resultsContainer");
+                    const noResults = document.getElementById("noResults");
+
+                    resultsContainer.classList.add("hidden");
+                    noResults.classList.remove("hidden");
+                    noResults.querySelector("h3").textContent = "Error";
+                    noResults.querySelector("p").textContent = message;
                 }
 
                 openModal(modelo) {
-                    const unit = this.filteredUnits.find(u => u.Modelo === modelo);
+                    const unit = this.filteredUnits.find((u) => u.Modelo === modelo);
                     if (!unit) return;
 
-                    const modal = document.getElementById('unitModal');
-                    const modalTitle = document.getElementById('modalTitle');
-                    const modalSubtitle = document.getElementById('modalSubtitle');
-                    const modalContent = document.getElementById('modalContent');
+                    const modal = document.getElementById("unitModal");
+                    const modalTitle = document.getElementById("modalTitle");
+                    const modalSubtitle = document.getElementById("modalSubtitle");
+                    const modalContent = document.getElementById("modalContent");
 
                     modalTitle.textContent = unit.Modelo;
                     modalSubtitle.textContent = unit.Titulo;
                     modalContent.innerHTML = this.createDetailedContent(unit);
 
-                    modal.classList.remove('hidden');
-                    document.body.style.overflow = 'hidden';
+                    modal.classList.remove("hidden");
+                    document.body.style.overflow = "hidden";
                 }
 
                 closeModal() {
-                    const modal = document.getElementById('unitModal');
-                    modal.classList.add('hidden');
-                    document.body.style.overflow = 'auto';
+                    const modal = document.getElementById("unitModal");
+                    modal.classList.add("hidden");
+                    document.body.style.overflow = "auto";
                 }
 
                 createDetailedContent(unit) {
                     const datos = unit.Datos || {};
-                    const refrigeracion = datos['Capacidad de refrigeración'] || {};
-                    const voltaje = datos.Voltaje || {};
-                    const corriente = datos.Corriente || {};
-                    const temperatura = datos['Rango de temperatura'] || {};
-                    const deshielo = datos.Deshielo || 'N/A';
-                    const aireEvaporacion = datos['Volumen de aire de evaporación'] || 'N/A';
-                    const refrigerante = datos['Volumen de refrigerante'] || 'N/A';
-                    const compresor = datos.Compresor || {};
-                    const condensador = datos.Condensador || {};
-                    const evaporador = datos.Evaporador || {};
-                    const volumenRecomendado = datos['Tamaño de caja recomendado'] || {};
-                    const calefaccion = datos.Calefacción || null;
-                    const motor = datos.Motor || null;
-                    const standby = datos['Stand-by'] || null;
-                    const tamañoProducto = datos['Tamaño del producto'] || null;
-                    const pesoProducto = datos['Peso del producto'] || null;
 
-                    let content = `
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <!-- Capacidad de refrigeración -->
+                    let content = `<div class="grid grid-cols-1 md:grid-cols-2 gap-6">`;
+
+                    // Render all fields dynamically
+                    Object.keys(datos).forEach((key) => {
+                        const value = datos[key];
+
+                        if (value === null || value === undefined || value === "") return;
+
+                        content += `
                             <div class="bg-slate-50 rounded-lg p-4">
-                                <h4 class="font-semibold text-slate-800 mb-3">Capacidad de refrigeración</h4>
+                                <h4 class="font-semibold text-slate-800 mb-3">${key}</h4>
                                 <div class="space-y-2 text-sm">
-                    `;
-
-                    if (refrigeracion['0a38']) {
-                        content += `
-                            <div class="flex justify-between">
-                                <span class="text-slate-600">0°C a 38°C:</span>
-                                <span class="font-medium">${refrigeracion['0a38'].join(', ')}</span>
-                            </div>
                         `;
-                    }
 
-                    if (refrigeracion['-18a38']) {
-                        content += `
-                            <div class="flex justify-between">
-                                <span class="text-slate-600">-18°C a 38°C:</span>
-                                <span class="font-medium">${refrigeracion['-18a38'].join(', ')}</span>
-                            </div>
-                        `;
-                    }
-
-                    content += `
-                                </div>
-                            </div>
-
-                            <!-- Especificaciones eléctricas -->
-                            <div class="bg-slate-50 rounded-lg p-4">
-                                <h4 class="font-semibold text-slate-800 mb-3">Especificaciones eléctricas</h4>
-                                <div class="space-y-2 text-sm">
-                    `;
-
-                    if (voltaje.DC) {
-                        content += `
-                            <div class="flex justify-between">
-                                <span class="text-slate-600">Voltaje DC:</span>
-                                <span class="font-medium">${voltaje.DC.join(', ')}</span>
-                            </div>
-                        `;
-                    }
-
-                    if (voltaje.Standby) {
-                        content += `
-                            <div class="flex justify-between">
-                                <span class="text-slate-600">Standby:</span>
-                                <span class="font-medium">${voltaje.Standby.join(', ')}</span>
-                            </div>
-                        `;
-                    }
-
-                    if (corriente.Amp) {
-                        corriente.Amp.forEach((amp, index) => {
-                            const voltage = voltaje.DC && voltaje.DC[index] ? voltaje.DC[index] : '';
+                        if (typeof value === "object" && !Array.isArray(value)) {
+                            // Handle nested objects
+                            Object.entries(value).forEach(([subKey, subValue]) => {
+                                if (subValue !== null && subValue !== undefined && subValue !== "") {
+                                    const formattedValue = this.formatValue(subValue);
+                                    content += `
+                                        <div class="flex justify-between">
+                                            <span class="text-slate-600">${subKey}:</span>
+                                            <span class="font-medium">${formattedValue}</span>
+                                        </div>
+                                    `;
+                                }
+                            });
+                        } else {
+                            // Handle primitive values
+                            const formattedValue = this.formatValue(value);
                             content += `
                                 <div class="flex justify-between">
-                                    <span class="text-slate-600">Corriente ${voltage}:</span>
-                                    <span class="font-medium">${amp.min}-${amp.max}A</span>
+                                    <span class="text-slate-600">Valor:</span>
+                                    <span class="font-medium">${formattedValue}</span>
                                 </div>
                             `;
-                        });
-                    }
-
-                    content += `
-                                </div>
-                            </div>
-
-                            <!-- Características técnicas -->
-                            <div class="bg-slate-50 rounded-lg p-4">
-                                <h4 class="font-semibold text-slate-800 mb-3">Características técnicas</h4>
-                                <div class="space-y-2 text-sm">
-                                    <div class="flex justify-between">
-                                        <span class="text-slate-600">Rango de temperatura:</span>
-                                        <span class="font-medium">${temperatura.min || 'N/A'}°C a ${temperatura.max || 'N/A'}°C</span>
-                                    </div>
-                                    <div class="flex justify-between">
-                                        <span class="text-slate-600">Deshielo:</span>
-                                        <span class="font-medium">${deshielo}</span>
-                                    </div>
-                                    <div class="flex justify-between">
-                                        <span class="text-slate-600">Volumen de aire:</span>
-                                        <span class="font-medium">${aireEvaporacion}</span>
-                                    </div>
-                                    <div class="flex justify-between">
-                                        <span class="text-slate-600">Refrigerante:</span>
-                                        <span class="font-medium">${refrigerante}</span>
-                                    </div>
-                    `;
-
-                    if (calefaccion) {
-                        content += `
-                            <div class="flex justify-between">
-                                <span class="text-slate-600">Calefacción:</span>
-                                <span class="font-medium">${calefaccion}</span>
-                            </div>
-                        `;
-                    }
-
-                    content += `
-                                </div>
-                            </div>
-
-                            <!-- Componentes -->
-                            <div class="bg-slate-50 rounded-lg p-4">
-                                <h4 class="font-semibold text-slate-800 mb-3">Componentes</h4>
-                                <div class="space-y-3 text-sm">
-                    `;
-
-                    if (compresor.Marca || compresor.Modelo) {
-                        content += `
-                            <div>
-                                <span class="font-medium text-slate-700">Compresor:</span>
-                                <div class="mt-1 space-y-1">
-                        `;
-                        if (compresor.Marca) content += `<div class="text-slate-600">Marca: ${compresor.Marca}</div>`;
-                        if (compresor.Modelo) content += `<div class="text-slate-600">Modelo: ${compresor.Modelo}</div>`;
-                        if (compresor.Dis) content += `<div class="text-slate-600">Displazamiento: ${compresor.Dis}</div>`;
-                        content += `</div></div>`;
-                    }
-
-                    if (condensador.Bobinas) {
-                        content += `
-                            <div>
-                                <span class="font-medium text-slate-700">Condensador:</span>
-                                <div class="mt-1 space-y-1">
-                                    <div class="text-slate-600">Bobinas: ${condensador.Bobinas}</div>
-                                    <div class="text-slate-600">Ventiladores: ${condensador['Cant. de venti']}</div>
-                                    <div class="text-slate-600">Tamaño: ${condensador.Tamaño}</div>
-                                    <div class="text-slate-600">Peso: ${condensador.Peso}</div>
-                                </div>
-                            </div>
-                        `;
-                    }
-
-                    if (evaporador.Bobinas) {
-                        content += `
-                            <div>
-                                <span class="font-medium text-slate-700">Evaporador:</span>
-                                <div class="mt-1 space-y-1">
-                                    <div class="text-slate-600">Bobinas: ${evaporador.Bobinas}</div>
-                                    <div class="text-slate-600">Ventiladores: ${evaporador['Cant. de venti']}</div>
-                                    <div class="text-slate-600">Tamaño: ${evaporador.Tamaño}</div>
-                                    <div class="text-slate-600">Peso: ${evaporador.Peso}</div>
-                                </div>
-                            </div>
-                        `;
-                    }
-
-                    content += `
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Información adicional -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                    `;
-
-                    if (volumenRecomendado.min && volumenRecomendado.max) {
-                        content += `
-                            <div class="bg-slate-50 rounded-lg p-4">
-                                <h4 class="font-semibold text-slate-800 mb-3">Tamaño de caja recomendado</h4>
-                                <div class="text-sm">
-                                    <div class="flex justify-between">
-                                        <span class="text-slate-600">Volumen:</span>
-                                        <span class="font-medium">${volumenRecomendado.min} - ${volumenRecomendado.max} ${volumenRecomendado.unidad || 'm³'}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        `;
-                    }
-
-                    if (motor || standby || tamañoProducto || pesoProducto) {
-                        content += `
-                            <div class="bg-slate-50 rounded-lg p-4">
-                                <h4 class="font-semibold text-slate-800 mb-3">Información adicional</h4>
-                                <div class="space-y-2 text-sm">
-                        `;
-
-                        if (motor) {
-                            if (motor.Modelo) content += `<div class="flex justify-between"><span class="text-slate-600">Motor:</span><span class="font-medium">${motor.Modelo}</span></div>`;
-                            if (motor.Clasificación) content += `<div class="flex justify-between"><span class="text-slate-600">Potencia:</span><span class="font-medium">${motor.Clasificación}</span></div>`;
-                        }
-
-                        if (standby) {
-                            if (standby.Clasificación) content += `<div class="flex justify-between"><span class="text-slate-600">Standby:</span><span class="font-medium">${standby.Clasificación}</span></div>`;
-                        }
-
-                        if (tamañoProducto) {
-                            Object.entries(tamañoProducto).forEach(([key, value]) => {
-                                content += `<div class="flex justify-between"><span class="text-slate-600">${key}:</span><span class="font-medium">${value}</span></div>`;
-                            });
-                        }
-
-                        if (pesoProducto) {
-                            content += `<div class="flex justify-between"><span class="text-slate-600">Peso:</span><span class="font-medium">${pesoProducto}</span></div>`;
                         }
 
                         content += `</div></div>`;
-                    }
+                    });
 
                     content += `</div>`;
 
                     return content;
                 }
+
+                formatValue(value) {
+                    if (Array.isArray(value)) {
+                        return value.join(", ");
+                    }
+                    if (typeof value === "object" && value.min !== undefined && value.max !== undefined) {
+                        // Handle new format with units in min/max values
+                        if (typeof value.min === "string" && typeof value.max === "string") {
+                            return `${value.min} - ${value.max}`;
+                        }
+                        // Handle old format with separate unidad field
+                        return `${value.min} - ${value.max} ${value.unidad || ""}`.trim();
+                    }
+                    if (typeof value === "object" && value !== null) {
+                        // Format plain objects as key-value pairs
+                        return Object.entries(value)
+                            .map(([k, v]) => `${k}: ${v}`)
+                            .join(", ");
+                    }
+                    return value;
+                }
             }
 
             // Initialize the catalog filter when the page loads
             let catalogFilter;
-            document.addEventListener('DOMContentLoaded', () => {
+            document.addEventListener("DOMContentLoaded", () => {
                 catalogFilter = new CatalogFilter();
             });
         </script>

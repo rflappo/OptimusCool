@@ -278,14 +278,24 @@
                         class="rounded-xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm hover:shadow-md transition"
                     >
                         <div
-                            class="h-40 rounded-lg bg-gradient-to-br from-brand-50 to-white border border-slate-100 flex items-center justify-center"
+                            class="h-40 rounded-lg border border-slate-100 flex items-center justify-center"
+                            style="background-color: #f0f0f1"
                         >
-                            <span class="text-slate-400">Imagen de producto</span>
+                        <img
+                            src="{{ url_for('static', path='img/unidades/HT-350T.png') }}"
+                            alt="{{ company_name }}"
+                            class="w-full h-full object-contain"
+                        />
                         </div>
-                        <h3 class="mt-4 font-semibold text-slate-900">Serie Compact</h3>
-                        <p class="text-sm text-slate-600">Utilitarios pequeños • Hasta -10°C</p>
+                        <h3 class="mt-4 font-semibold text-slate-900">HT-350T</h3>
+                        <p class="text-sm text-slate-600">
+                            Furgonetas pequeña, medianas y grandes. <br />
+                            Instalación rápia y sencilla, menor mantenimiento. <br />
+                            Tamaño de caja recomendado: 10-16m³.
+                        </p>
+
                         <div class="mt-4 flex items-center justify-between">
-                            <a class="text-brand-700 hover:underline" href="{{ url_for('catalog') }}">Detalles</a>
+                            <button onclick="openUnitModal('HT-350T')" class="text-brand-700 hover:underline">Detalles</button>
                             <a
                                 class="inline-flex min-h-[40px] items-center rounded-md bg-accent px-3 py-2 text-white text-sm"
                                 href="{{ url_for('contact') }}"
@@ -297,14 +307,23 @@
                         class="rounded-xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm hover:shadow-md transition"
                     >
                         <div
-                            class="h-40 rounded-lg bg-gradient-to-br from-brand-50 to-white border border-slate-100 flex items-center justify-center"
+                            class="h-40 rounded-lg border border-slate-100 flex items-center justify-center"
+                            style="background-color: #f0f0f1"
                         >
-                            <span class="text-slate-400">Imagen de producto</span>
+                        <img
+                            src="{{ url_for('static', path='img/unidades/TRF-200D.png') }}"
+                            alt="{{ company_name }}"
+                            class="w-full h-full object-contain"
+                        />
                         </div>
-                        <h3 class="mt-4 font-semibold text-slate-900">Serie Pro</h3>
-                        <p class="text-sm text-slate-600">Medianos y furgones • Hasta -20°C</p>
+                        <h3 class="mt-4 font-semibold text-slate-900">TRF-200D</h3>
+                        <p class="text-sm text-slate-600">
+                            Compersor inverter eléctrico. <br />
+                            Utilitarios pequeños y medianos. <br />
+                            Rango de temperatura: -18°C a +30°C
+                        </p>
                         <div class="mt-4 flex items-center justify-between">
-                            <a class="text-brand-700 hover:underline" href="{{ url_for('catalog') }}">Detalles</a>
+                            <button onclick="openUnitModal('TRF-200D')" class="text-brand-700 hover:underline">Detalles</button>
                             <a
                                 class="inline-flex min-h-[40px] items-center rounded-md bg-accent px-3 py-2 text-white text-sm"
                                 href="{{ url_for('contact') }}"
@@ -316,14 +335,23 @@
                         class="rounded-xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm hover:shadow-md transition"
                     >
                         <div
-                            class="h-40 rounded-lg bg-gradient-to-br from-brand-50 to-white border border-slate-100 flex items-center justify-center"
+                            class="h-40 rounded-lg border border-slate-100 flex items-center justify-center"
+                            style="background-color: #f0f0f1"
                         >
-                            <span class="text-slate-400">Imagen de producto</span>
+                        <img
+                            src="{{ url_for('static', path='img/unidades/HT-550.png') }}"
+                            alt="{{ company_name }}"
+                            class="w-full h-full object-contain"
+                        />
                         </div>
-                        <h3 class="mt-4 font-semibold text-slate-900">Serie Ultra</h3>
-                        <p class="text-sm text-slate-600">Cargas sensibles • Hasta -25°C</p>
+                        <h3 class="mt-4 font-semibold text-slate-900">HT-550</h3>
+                        <p class="text-sm text-slate-600">
+                            Camiones medianos - Montaje Frontal. <br />
+                            Tamaño de caja recomendado: 22-30m³ <br />
+                            Panel de control digital multifuncional de fácil manejo.
+                        </p>
                         <div class="mt-4 flex items-center justify-between">
-                            <a class="text-brand-700 hover:underline" href="{{ url_for('catalog') }}">Detalles</a>
+                            <button onclick="openUnitModal('HT-550')" class="text-brand-700 hover:underline">Detalles</button>
                             <a
                                 class="inline-flex min-h-[40px] items-center rounded-md bg-accent px-3 py-2 text-white text-sm"
                                 href="{{ url_for('contact') }}"
@@ -419,6 +447,42 @@
             </div>
         </footer>
 
+        <!-- Unit Details Modal -->
+        <div id="unitModal" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+            <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                <!-- Background overlay -->
+                <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+
+                <!-- Modal panel -->
+                <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full">
+                    <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h3 id="modalTitle" class="text-2xl font-bold text-slate-800"></h3>
+                                <p id="modalSubtitle" class="text-sm text-slate-600 mt-1"></p>
+                            </div>
+                            <button id="closeModal" class="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-brand-500">
+                                <span class="sr-only">Cerrar</span>
+                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                        
+                        <div id="modalContent" class="space-y-6">
+                            <!-- Content will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                        <button id="closeModalBtn" type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-brand-600 text-base font-medium text-white hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500 sm:ml-3 sm:w-auto sm:text-sm">
+                            Cerrar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Mobile menu script (ARIA-friendly) -->
         <script>
             const btn = document.getElementById("menuBtn");
@@ -428,6 +492,277 @@
                     const open = panel.classList.toggle("hidden") === false;
                     btn.setAttribute("aria-expanded", String(open));
                 });
+            }
+
+            // Modal event listeners
+            document.getElementById('closeModal').addEventListener('click', closeUnitModal);
+            document.getElementById('closeModalBtn').addEventListener('click', closeUnitModal);
+            
+            // Close modal when clicking outside
+            document.getElementById('unitModal').addEventListener('click', (e) => {
+                if (e.target.id === 'unitModal') {
+                    closeUnitModal();
+                }
+            });
+
+            async function openUnitModal(modelo) {
+                try {
+                    const response = await fetch(`/api/catalog?model=${encodeURIComponent(modelo)}`);
+                    const units = await response.json();
+                    
+                    if (!units || units.length === 0) {
+                        console.error('Unit not found:', modelo);
+                        return;
+                    }
+
+                    const unit = units[0];
+                    const modal = document.getElementById('unitModal');
+                    const modalTitle = document.getElementById('modalTitle');
+                    const modalSubtitle = document.getElementById('modalSubtitle');
+                    const modalContent = document.getElementById('modalContent');
+
+                    modalTitle.textContent = unit.Modelo;
+                    modalSubtitle.textContent = unit.Titulo;
+                    modalContent.innerHTML = createDetailedContent(unit);
+
+                    modal.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                } catch (error) {
+                    console.error('Error loading unit details:', error);
+                }
+            }
+
+            function closeUnitModal() {
+                const modal = document.getElementById('unitModal');
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+
+            function createDetailedContent(unit) {
+                const datos = unit.Datos || {};
+                const refrigeracion = datos['Capacidad de refrigeración'] || {};
+                const voltaje = datos.Voltaje || {};
+                const corriente = datos.Corriente || {};
+                const temperatura = datos['Rango de temperatura'] || {};
+                const deshielo = datos.Deshielo || 'N/A';
+                const aireEvaporacion = datos['Volumen de aire de evaporación'] || 'N/A';
+                const refrigerante = datos['Volumen de refrigerante'] || 'N/A';
+                const compresor = datos.Compresor || {};
+                const condensador = datos.Condensador || {};
+                const evaporador = datos.Evaporador || {};
+                const volumenRecomendado = datos['Tamaño de caja recomendado'] || {};
+                const calefaccion = datos.Calefacción || null;
+                const motor = datos.Motor || null;
+                const standby = datos['Stand-by'] || null;
+                const tamañoProducto = datos['Tamaño del producto'] || null;
+                const pesoProducto = datos['Peso del producto'] || null;
+
+                let content = `
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Capacidad de refrigeración -->
+                        <div class="bg-slate-50 rounded-lg p-4">
+                            <h4 class="font-semibold text-slate-800 mb-3">Capacidad de refrigeración</h4>
+                            <div class="space-y-2 text-sm">
+                `;
+
+                if (refrigeracion['0a38']) {
+                    content += `
+                        <div class="flex justify-between">
+                            <span class="text-slate-600">0°C a 38°C:</span>
+                            <span class="font-medium">${refrigeracion['0a38'].join(', ')}</span>
+                        </div>
+                    `;
+                }
+
+                if (refrigeracion['-18a38']) {
+                    content += `
+                        <div class="flex justify-between">
+                            <span class="text-slate-600">-18°C a 38°C:</span>
+                            <span class="font-medium">${refrigeracion['-18a38'].join(', ')}</span>
+                        </div>
+                    `;
+                }
+
+                content += `
+                            </div>
+                        </div>
+
+                        <!-- Especificaciones eléctricas -->
+                        <div class="bg-slate-50 rounded-lg p-4">
+                            <h4 class="font-semibold text-slate-800 mb-3">Especificaciones eléctricas</h4>
+                            <div class="space-y-2 text-sm">
+                `;
+
+                if (voltaje.DC) {
+                    content += `
+                        <div class="flex justify-between">
+                            <span class="text-slate-600">Voltaje DC:</span>
+                            <span class="font-medium">${voltaje.DC.join(', ')}</span>
+                        </div>
+                    `;
+                }
+
+                if (voltaje.Standby) {
+                    content += `
+                        <div class="flex justify-between">
+                            <span class="text-slate-600">Standby:</span>
+                            <span class="font-medium">${voltaje.Standby.join(', ')}</span>
+                        </div>
+                    `;
+                }
+
+                if (corriente.Amp) {
+                    corriente.Amp.forEach((amp, index) => {
+                        const voltage = voltaje.DC && voltaje.DC[index] ? voltaje.DC[index] : '';
+                        content += `
+                            <div class="flex justify-between">
+                                <span class="text-slate-600">Corriente ${voltage}:</span>
+                                <span class="font-medium">${amp.min}-${amp.max}A</span>
+                            </div>
+                        `;
+                    });
+                }
+
+                content += `
+                            </div>
+                        </div>
+
+                        <!-- Características técnicas -->
+                        <div class="bg-slate-50 rounded-lg p-4">
+                            <h4 class="font-semibold text-slate-800 mb-3">Características técnicas</h4>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-slate-600">Rango de temperatura:</span>
+                                    <span class="font-medium">${temperatura.min || 'N/A'}°C a ${temperatura.max || 'N/A'}°C</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-slate-600">Deshielo:</span>
+                                    <span class="font-medium">${deshielo}</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-slate-600">Volumen de aire:</span>
+                                    <span class="font-medium">${aireEvaporacion}</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-slate-600">Refrigerante:</span>
+                                    <span class="font-medium">${refrigerante}</span>
+                                </div>
+                `;
+
+                if (calefaccion) {
+                    content += `
+                        <div class="flex justify-between">
+                            <span class="text-slate-600">Calefacción:</span>
+                            <span class="font-medium">${calefaccion}</span>
+                        </div>
+                    `;
+                }
+
+                content += `
+                            </div>
+                        </div>
+
+                        <!-- Componentes -->
+                        <div class="bg-slate-50 rounded-lg p-4">
+                            <h4 class="font-semibold text-slate-800 mb-3">Componentes</h4>
+                            <div class="space-y-3 text-sm">
+                `;
+
+                if (compresor.Marca || compresor.Modelo) {
+                    content += `
+                        <div>
+                            <span class="font-medium text-slate-700">Compresor:</span>
+                            <div class="mt-1 space-y-1">
+                    `;
+                    if (compresor.Marca) content += `<div class="text-slate-600">Marca: ${compresor.Marca}</div>`;
+                    if (compresor.Modelo) content += `<div class="text-slate-600">Modelo: ${compresor.Modelo}</div>`;
+                    if (compresor.Dis) content += `<div class="text-slate-600">Displazamiento: ${compresor.Dis}</div>`;
+                    content += `</div></div>`;
+                }
+
+                if (condensador.Bobinas) {
+                    content += `
+                        <div>
+                            <span class="font-medium text-slate-700">Condensador:</span>
+                            <div class="mt-1 space-y-1">
+                                <div class="text-slate-600">Bobinas: ${condensador.Bobinas}</div>
+                                <div class="text-slate-600">Ventiladores: ${condensador['Cant. de venti']}</div>
+                                <div class="text-slate-600">Tamaño: ${condensador.Tamaño}</div>
+                                <div class="text-slate-600">Peso: ${condensador.Peso}</div>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                if (evaporador.Bobinas) {
+                    content += `
+                        <div>
+                            <span class="font-medium text-slate-700">Evaporador:</span>
+                            <div class="mt-1 space-y-1">
+                                <div class="text-slate-600">Bobinas: ${evaporador.Bobinas}</div>
+                                <div class="text-slate-600">Ventiladores: ${evaporador['Cant. de venti']}</div>
+                                <div class="text-slate-600">Tamaño: ${evaporador.Tamaño}</div>
+                                <div class="text-slate-600">Peso: ${evaporador.Peso}</div>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                content += `
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Información adicional -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                `;
+
+                if (volumenRecomendado.min && volumenRecomendado.max) {
+                    content += `
+                        <div class="bg-slate-50 rounded-lg p-4">
+                            <h4 class="font-semibold text-slate-800 mb-3">Tamaño de caja recomendado</h4>
+                            <div class="text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-slate-600">Volumen:</span>
+                                    <span class="font-medium">${volumenRecomendado.min} - ${volumenRecomendado.max} ${volumenRecomendado.unidad || 'm³'}</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                if (motor || standby || tamañoProducto || pesoProducto) {
+                    content += `
+                        <div class="bg-slate-50 rounded-lg p-4">
+                            <h4 class="font-semibold text-slate-800 mb-3">Información adicional</h4>
+                            <div class="space-y-2 text-sm">
+                    `;
+
+                    if (motor) {
+                        if (motor.Modelo) content += `<div class="flex justify-between"><span class="text-slate-600">Motor:</span><span class="font-medium">${motor.Modelo}</span></div>`;
+                        if (motor.Clasificación) content += `<div class="flex justify-between"><span class="text-slate-600">Potencia:</span><span class="font-medium">${motor.Clasificación}</span></div>`;
+                    }
+
+                    if (standby) {
+                        if (standby.Clasificación) content += `<div class="flex justify-between"><span class="text-slate-600">Standby:</span><span class="font-medium">${standby.Clasificación}</span></div>`;
+                    }
+
+                    if (tamañoProducto) {
+                        Object.entries(tamañoProducto).forEach(([key, value]) => {
+                            content += `<div class="flex justify-between"><span class="text-slate-600">${key}:</span><span class="font-medium">${value}</span></div>`;
+                        });
+                    }
+
+                    if (pesoProducto) {
+                        content += `<div class="flex justify-between"><span class="text-slate-600">Peso:</span><span class="font-medium">${pesoProducto}</span></div>`;
+                    }
+
+                    content += `</div></div>`;
+                }
+
+                content += `</div>`;
+
+                return content;
             }
         </script>
 

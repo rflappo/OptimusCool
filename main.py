@@ -38,33 +38,26 @@ async def catalog(request: Request):
 
 @app.get("/api/catalog")
 async def api_catalog(
+    model: str = None,
     unit_type: str = None,
-    mount_type: str = None,
-    power_type: str = None,
-    material: str = None,
     min_capacity: int = None,
     max_capacity: int = None,
 ):
     """API endpoint to get filtered units"""
     filtered_units = UNITS.copy()
 
-    # Apply filters
+    # Filter by specific model if provided
+    if model:
+        filtered_units = [unit for unit in filtered_units if unit.get("Modelo") == model]
+        return filtered_units  # Always return a list (empty if not found, single item if found)
+
     if unit_type:
-        filtered_units = [unit for unit in filtered_units if unit_type in unit.get("Modelo", "")]
-
-    if mount_type:
-        filtered_units = [unit for unit in filtered_units if mount_type in unit.get("Modelo", "")]
-
-    if power_type:
+        words = CatalogReference[unit_type].lower().split(";")
         filtered_units = [
             unit
             for unit in filtered_units
-            if power_type in unit.get("Modelo", "")
-            or CatalogReference[power_type].value[:-1].lower() in unit.get("Titulo").lower()
+            if unit_type in unit.get("Modelo", "") or any((w in unit.get("Titulo") for w in words))
         ]
-
-    if material:
-        filtered_units = [unit for unit in filtered_units if material in unit.get("Modelo", "")]
 
     if min_capacity is not None or max_capacity is not None:
 
